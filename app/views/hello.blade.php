@@ -1,5 +1,5 @@
 @extends('layout')
 
 @section('container')
-    Bienvenue
+    Bienvenue sur Présences
 @stop
