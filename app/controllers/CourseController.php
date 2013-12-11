@@ -1,9 +1,7 @@
 <?php
 
-class UserController extends BaseController {
+class CourseController extends BaseController {
 
-	protected $user;
-	
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -11,7 +9,7 @@ class UserController extends BaseController {
 	 */
 	public function index()
 	{
-        return View::make('users.index');
+        return View::make('courses.index')->with('title','Mes cours');
 	}
 
 	/**
@@ -21,7 +19,7 @@ class UserController extends BaseController {
 	 */
 	public function create()
 	{
-        return View::make('users.create');
+        return View::make('courses.create');
 	}
 
 	/**
@@ -42,7 +40,7 @@ class UserController extends BaseController {
 	 */
 	public function show($id)
 	{
-        return View::make('users.show')->with('title','Mon profil');
+        return View::make('courses.show');
 	}
 
 	/**
@@ -53,7 +51,7 @@ class UserController extends BaseController {
 	 */
 	public function edit($id)
 	{
-        return View::make('users.edit');
+        return View::make('courses.edit');
 	}
 
 	/**
@@ -76,30 +74,6 @@ class UserController extends BaseController {
 	public function destroy($id)
 	{
 		//
-	}
-
-	public function login() {
-		return View::make('users.login')->with('title','Se connecter');
-	}
-
-	public function connect() {
-		$user = array(
-			'name' => Input::get('name'),
-			'password' => Input::get('password')
-	    );
-
-	    if(Auth::attempt($user)){
-	        return Redirect::route('home.index');
-	    }
-	    else{
-	        return Redirect::route('login');
-	    }
-	}
-
-	public function logout() {
-
-		Auth::logout();
-		return Redirect::route('login');
 	}
 
 }

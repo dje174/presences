@@ -11,20 +11,16 @@ class DatabaseSeeder extends Seeder {
 	{
 		Eloquent::unguard();
 		$this->call('LevelsTableSeeder');
+		$this->call('UsersTableSeeder');
 		$this->call('StudentsTableSeeder');
-		$this->call('GroupsTableSeeder');
 		$this->call('AttendancesTableSeeder');
 		$this->call('YearsTableSeeder');
-		$this->call('TeachersTableSeeder');
 		$this->call('CoursesTableSeeder');
-		
-		$this->call('GroupStudentTableSeeder');
 		$this->call('CourseTeacherTableSeeder');
 		$this->call('CourseStudentTableSeeder');
-		$this->call('SessionsTableSeeder');
-		$this->call('SessionStudentTableSeeder');
-		$this->call('HomesTableSeeder');
-		$this->call('UsersTableSeeder');
+		//$this->call('SessionStudentTableSeeder');
+		//Ajout des slugs, oubliés dans la première version
+		$this->call('SlugSeeder');
 	}
 
 }

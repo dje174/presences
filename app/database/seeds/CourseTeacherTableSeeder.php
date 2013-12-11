@@ -5,37 +5,17 @@ class CourseTeacherTableSeeder extends Seeder {
     {
         DB::table('course_teacher')->delete();
 
+        // Rien de bien malin ici, on attache les cours aux profs manuellement
 
-        $course_teacher = 
-        [
-            [
-                'course_id' => Course::where('name','=','Projets Web')->first()->id,
-                'teacher_id' => Teacher::where('email','=','dominique.vilain@hepl.be')->first()->id,
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime()
-            ],
-            [
-                'course_id' => Course::where('name','=','Design Web')->first()->id,
-                'teacher_id' => Teacher::where('email','=','myriam.dupont@hepl.be')->first()->id,
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime()
-            ],
-            [
-                'course_id' => Course::where('name','=','Design Web')->first()->id,
-                'teacher_id' => Teacher::where('email','=','dominique.vilain@hepl.be')->first()->id,
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime()
-            ],
-            [
-                'course_id' => Course::where('name','=','Typographie')->first()->id,
-                'teacher_id' => Teacher::where('email','=','myriam.dupont@hepl.be')->first()->id,
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime()
-            ],
-
-        ];
-
-        DB::table('course_teacher')->insert($course_teacher);
+        Course::whereName('Projets Web, labo')->first()->teachers()->attach(User::whereEmail('dominique.vilain@hepl.be')->first());
+        Course::whereName('Design Web, labo')->first()->teachers()->attach(User::whereEmail('myriam.dupont@hepl.be')->first());
+        Course::whereName('Design Web, théorie')->first()->teachers()->attach(User::whereEmail('myriam.dupont@hepl.be')->first());
+        Course::whereName('Création de pages web, labo')->first()->teachers()->attach(User::whereEmail('myriam.dupont@hepl.be')->first());
+        Course::whereName('Création de pages web, labo')->first()->teachers()->attach(User::whereEmail('vinciane.lovinfosse@hepl.be')->first());
+        Course::whereName('Création de pages web, labo')->first()->teachers()->attach(User::whereEmail('pierre.worontzoff@hepl.be')->first());
+        Course::whereName('Création de pages web, labo')->first()->teachers()->attach(User::whereEmail('francois.parmentier@hepl.be')->first());
+        Course::whereName('Création de pages web, théorie')->first()->teachers()->attach(User::whereEmail('myriam.dupont@hepl.be')->first());
+        Course::whereName('Typographie, théorie')->first()->teachers()->attach(User::whereEmail('maelle.vivegnis@hepl.be')->first());
     }
 
 }

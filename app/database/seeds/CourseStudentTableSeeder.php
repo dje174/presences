@@ -5,54 +5,27 @@ class CourseStudentTableSeeder extends Seeder {
     {
         DB::table('course_student')->delete();
 
+        //Les cours sont associés à des levels et les étudiants à des groupes.
+        //Comme ce sont les données de l’école virtuelle, les groupes correspondent
+        //aux levels.
+        //La logique ici est donc de mettre en rapport le deuxième chiffre
+        //du numéro de groupe de l’étudiant avec un level. Par le biais
+        //du level, on récupère les cours qui concernent l’étudiant
 
-        $course_student = 
-        [
-            [
-                'course_id' => Course::where('name','=','Projets Web')->first()->id,
-                'student_id' => Student::where('email','=','flowerpower@hepl.be')->first()->id,
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime()
-            ],
-            [
-                'course_id' => Course::where('name','=','Projets Web')->first()->id,
-                'student_id' => Student::where('email','=','iworkwithmyhands@hepl.be')->first()->id,
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime()
-            ],
-            [
-                'course_id' => Course::where('name','=','Projets Web')->first()->id,
-                'student_id' => Student::where('email','=','beheaded@hepl.be')->first()->id,
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime()
-            ],
-            [
-                'course_id' => Course::where('name','=','Design Web')->first()->id,
-                'student_id' => Student::where('email','=','beheaded@hepl.be')->first()->id,
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime()
-            ],
-            [
-                'course_id' => Course::where('name','=','Typographie')->first()->id,
-                'student_id' => Student::where('email','=','letrain@hepl.be')->first()->id,
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime()
-            ],
-            [
-                'course_id' => Course::where('name','=','Typographie')->first()->id,
-                'student_id' => Student::where('email','=','beheaded@hepl.be')->first()->id,
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime()
-            ],
-            [
-                'course_id' => Course::where('name','=','Programmation côté serveur')->first()->id,
-                'student_id' => Student::where('email','=','iworkwithmyhands@hepl.be')->first()->id,
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime()
-            ],
-        ];
+        $levels = ['première année infographie','deuxième année infographie','troisième année infographie'];
+        
+        $students = Student::with('groups')->get();
+        $courses = Course::all();
 
-        DB::table('course_student')->insert($course_student);
+        foreach($students as $student){
+            $groupName = $student->groups[0]->name;
+            foreach ($courses as $course) {
+                if($course->level_id == Level::whereName($levels[$groupName[1]-1])->first()->id)
+                {
+                    $student->courses()->attach($course);
+                }
+            }
+        }
     }
 
 }

@@ -36,7 +36,7 @@ class Course extends Eloquent {
      */
     public function teachers()
     {
-        return $this->belongsToMany('Teacher')->withTimestamps();
+        return $this->belongsToMany('User','course_teacher','course_id','teacher_id')->withTimestamps();
     }
 
     public function students()
