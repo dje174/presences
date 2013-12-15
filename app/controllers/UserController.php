@@ -31,7 +31,7 @@ class UserController extends BaseController {
 	 */
 	public function store()
 	{
-		//
+		$user = $this->user->store( Input::all() );
 	}
 
 	/**
@@ -53,7 +53,7 @@ class UserController extends BaseController {
 	 */
 	public function edit($id)
 	{
-        return View::make('users.edit');
+        return View::make('users.edit')->with('title','Modifier mon profil');
 	}
 
 	/**
@@ -64,7 +64,9 @@ class UserController extends BaseController {
 	 */
 	public function update($id)
 	{
-		//
+	$this->user->update($id, Input::all());
+
+	return Redirect::route('users.show', $id);		//
 	}
 
 	/**

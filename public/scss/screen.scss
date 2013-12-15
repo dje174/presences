@@ -1,0 +1,47 @@
+@import "compass";
+@import "compass/reset";
+@import "colors";
+
+html{
+	background-image: url(../img/felt.png);
+}
+
+body{
+	font: 18px/1.5 "Roboto";
+}
+
+nav{
+	position: relative;
+	width: 19em;
+	background-color: $bleuClair;
+	#menu:first-child:before {
+  		content:url('../img/Data-48.png');
+  		position: absolute;
+  		top: 1.25em;
+  		left: 15.5em;
+	}
+	#cache{
+		display: none;
+	}
+	#logo{
+		padding: 0.75em 0 0 0.5em;
+	}
+	ul.subMenu{
+		li{
+			padding: 0.75em 1.15em;
+			width: 16.7em;
+			text-align: center;
+			background-color: $bleuClair;
+			&:hover{
+				background-color: $bleuFonce;
+				a{
+					color:white;
+				}
+			}
+		}
+		a{
+			text-decoration: none;
+			color: $rougePure;
+		}
+	}
+}
