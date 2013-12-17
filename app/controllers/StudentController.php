@@ -38,11 +38,12 @@ class StudentController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($student)
+	public function show($slug)
 	{
-		return $student;
-		//$student = Student::findOrFail($id);
-        //return View::make('students.show', compact('student'))->with('title','Profil de'.$student->name);
+		//return View::make('students.show')->with('title','Profil de l\'étudiant');
+	//	return $student;
+		$student = $slug;
+        return View::make('students.show', compact('student'))->with('title','Profil de '.$student->first_name.' '.$student->name);
 	}
 
 	/**

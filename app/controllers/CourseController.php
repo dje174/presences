@@ -38,11 +38,10 @@ class CourseController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($course)
+	public function show($slug)
 	{
-		return $course;
-		// $student = Course::findOrFail($id);
-  		// return View::make('courses.show', compact('course'))->with('title','Fiche de '.$course->name);
+		$course = $slug;
+		return View::make('courses.show', compact('student'))->with('title','Cours de '.$course->name);
 	}
 
 	/**

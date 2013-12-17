@@ -11,7 +11,7 @@
 	echo '<br>';
 	foreach ($tc->courses as $course) {
 		foreach ($course->students as $student){
-			echo link_to_route('students.show',$student->first_name.' '.$student->name,$student->slug,$student->id);
+			echo link_to_route('students.show',$student->first_name.' '.$student->name,$student->slug);
 			echo '<br>';
 		}
 	}

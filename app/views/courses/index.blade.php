@@ -10,7 +10,7 @@
 	echo ') : ';
 	echo '<br>';
 	foreach ($tc->courses as $course) {
-		echo link_to_route('courses.show',$course->name,$course->slug,$course->id);
+		echo link_to_route('courses.show',$course->name,$course->slug);
 		echo '<br>';
 	}
 ?>
