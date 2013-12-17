@@ -130,10 +130,52 @@ nav{
 /* Section principale */
 
 section.main{
-	padding: 1.5em 4em;
+	padding: 1em 4em;
 	width: 40em;
 	margin: 0 auto;
 	min-height: 20em;
+	h2{
+		font-size: 22px;
+		color: $bleuFonce;
+		padding-bottom: 0.5em;
+	}
+	label{
+		display: block;
+		color: $grisFonce;
+		padding-top: 0.4em;
+		span{
+			color: black;
+		}
+	}
+	.photoProfilUser{
+		float: left;
+		padding: 0 1em 1em 0;
+	}
+	.text{
+		padding: 0.5em 0.75em;
+		font-size: 16px;
+		@include border-radius(0.5em);
+		border: 1px solid $grisMoyen;
+		width: 16em;
+		margin-bottom: 0.5em;
+	}
+	select{
+		@extend .text;
+	}
+	.validation{
+		display: block;
+		background-color: $rougePure;
+		color: white;
+		padding: 1em 1.5em;
+		text-transform: uppercase;
+		border: none;
+		cursor: pointer;
+		@include border-radius(0.5em);
+		margin-top: 1em;
+		&:hover{
+			background-color: $rougeFonce;
+		}
+	}
 }
 
 /* Footer */
@@ -164,7 +206,7 @@ footer{
 }
 
 
-footer:after{
+footer:after,.informationsStudent:after{
 	content:"";
 	clear:both;
 	display: block;

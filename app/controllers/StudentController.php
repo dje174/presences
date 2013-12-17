@@ -52,9 +52,10 @@ class StudentController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($slug)
 	{
-        return View::make('students.edit');
+		$student = $slug;
+        return View::make('students.edit', compact('student'))->with('title','Modifier le profil');
 	}
 
 	/**
@@ -63,9 +64,15 @@ class StudentController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($slug)
 	{
-		//
+		$student = $slug;
+		$student->first_name=Input::get('first_name');
+		$student->name=Input::get('name');
+		$student->email=Input::get('email');
+		$student->level=Input::get('level');
+		$student->save();
+		return Redirect::route('students.index', compact('student'))->with('title','Mes élèves');
 	}
 
 	/**
@@ -74,9 +81,11 @@ class StudentController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($slug)
 	{
-		//
+		$student = $slug;
+		$student->delete();
+		return Redirect::route('students.index')->with('title','Mes élèves');
 	}
 
 }

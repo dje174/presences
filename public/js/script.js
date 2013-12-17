@@ -3,7 +3,7 @@
  * JS Document - /js/script.js
  *
  * coded by Jérôme Poucet
- * started at 15.09.13
+ * started at 14.12.13
  */
 
 /* jshint boss: true, curly: true, eqeqeq: true, eqnull: true, immed: true, latedef: true, newcap: true, noarg: true, browser: true, jquery: true, noempty: true, sub: true, undef: true, unused: true, white: false */

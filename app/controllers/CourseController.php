@@ -41,7 +41,7 @@ class CourseController extends BaseController {
 	public function show($slug)
 	{
 		$course = $slug;
-		return View::make('courses.show', compact('student'))->with('title','Cours de '.$course->name);
+		return View::make('courses.show', compact('course'))->with('title','Cours de '.$course->name);
 	}
 
 	/**
