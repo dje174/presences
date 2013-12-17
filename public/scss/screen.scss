@@ -162,6 +162,10 @@ section.main{
 	select{
 		@extend .text;
 	}
+	#inputDescription{
+		@extend .text;
+		width: 30em;
+	}
 	.validation{
 		display: block;
 		background-color: $rougePure;

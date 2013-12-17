@@ -6,7 +6,7 @@
 		{{ Form::label('name','Nom du cours :') }}
 		{{ Form::text('name', $course->name, array('class'=>'text')) }}
 		{{ Form::label('description','Description du cours :') }}
-		{{ Form::text('descritption', $course->description, array('id'=>'inputDescription')) }}
+		{{ Form::text('description', $course->description, array('id'=>'inputDescription')) }}
 		{{ Form::label('level','Degré :') }}
 			{{ Form::select('level', array(
 				'1' => 'première année infographie',
@@ -15,12 +15,13 @@
 			))}}
 		{{ Form::label('year','Année académique :') }}
 			{{ Form::select('year', array(
-				'1' => '2009_2010',
-				'2' => '2010_2011',
-				'3' => '2011_2012',
-				'4' => '2012_2013',
-				'5' => '2014_2015'
-			)) }}
+				'1' => '2009-2010',
+				'2' => '2010-2011',
+				'3' => '2011-2012',
+				'4' => '2012-2013',
+				'5' => '2013-2014',
+				'6' => '2014-2015'
+			))}}
 		{{ Form::submit('Valider la modification', array('class'=>'validation')) }}
 		{{ Form::close() }}
 	</section>
