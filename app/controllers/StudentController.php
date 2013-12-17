@@ -70,7 +70,7 @@ class StudentController extends BaseController {
 		$student->first_name=Input::get('first_name');
 		$student->name=Input::get('name');
 		$student->email=Input::get('email');
-		$student->level=Input::get('level');
+		$student->level_id=Input::get('level');
 		$student->save();
 		return Redirect::route('students.index', compact('student'))->with('title','Mes élèves');
 	}

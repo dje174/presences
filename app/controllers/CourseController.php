@@ -50,9 +50,15 @@ class CourseController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($slug)
 	{
-        return View::make('courses.edit');
+		$course = $slug;
+		$course->name=Input::get('name');
+		$course->description=Input::get('description');
+		$course->level_id=Input::get('level');
+		$course->year_id=Input::get('year');
+		$course->save();
+		return Redirect::route('courses.index', compact('course'))->with('title','Mes cours');
 	}
 
 	/**
