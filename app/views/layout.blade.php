@@ -11,7 +11,7 @@
 		@if (Auth::check())
 			<nav>
 				<ul class="navigation">
-					<li id="logo"><a href="/home">{{ HTML::image('img/PresencesLogo.png') }}</a></li>
+					<li id="logo"><a href="/home" title="Accueil">{{ HTML::image('img/PresencesLogo.png') }}</a></li>
 					<li class="toggleSubMenu">
 						<span>Menu</span>
 						<ul class="subMenu">
@@ -23,15 +23,24 @@
 					</li>
 				</ul>
 			</nav>
-		@else
-
 		@endif
     </header>
     <section class="main">
         @yield('container')
     </section>
+    @if (Auth::check())
     <footer>
+    	<div class="infosFooter">
+    		<img src="img/PresencesLogoSmall.png" alt="Logo réduit Présences" id="logoFooter">
+	    	<p>Développé par <a href="http://www.jerome-poucet.be">Jérôme Poucet</a></p>
+	    	<p>Année scolaire 2013 - 2014</p>
+	    	<p>HEPL Seraing</p>
+    	</div>
+    	<div class="arrow-up">
+    		<a href="#">{{ HTML::image('img/arrow-up.png') }}</a>
+    	</div>
     </footer>
+   	@endif
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 </body>

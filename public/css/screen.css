@@ -42,44 +42,175 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block; }
 
-/* line 5, ../scss/screen.scss */
+@font-face {
+  font-family: 'bebasregular';
+  src: url("BEBAS___-webfont.eot");
+  src: url("BEBAS___-webfont.eot?#iefix") format("embedded-opentype"), url("BEBAS___-webfont.woff") format("woff"), url("BEBAS___-webfont.ttf") format("truetype"), url("BEBAS___-webfont.svg#bebasregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* line 17, ../scss/screen.scss */
 html {
   background-image: url(../img/felt.png); }
 
-/* line 9, ../scss/screen.scss */
+/* line 21, ../scss/screen.scss */
 body {
   font: 18px/1.5 "Roboto"; }
+/* line 23, ../scss/screen.scss */
+body header {
+  background-color: #c0d8ea; }
+/* line 26, ../scss/screen.scss */
+body a {
+  text-decoration: none;
+  color: #d41c2c; }
+/* line 29, ../scss/screen.scss */
+body a:hover {
+  color: #b21c27;
+  text-decoration: underline; }
 
-/* line 13, ../scss/screen.scss */
+/* line 36, ../scss/screen.scss */
 nav {
   position: relative;
   width: 19em;
   background-color: #c0d8ea; }
-/* line 17, ../scss/screen.scss */
+/* line 40, ../scss/screen.scss */
 nav #menu:first-child:before {
   content: url("../img/Data-48.png");
   position: absolute;
-  top: 1.25em;
-  left: 15.5em; }
-/* line 23, ../scss/screen.scss */
+  top: 1.5em;
+  left: 1.25em; }
+/* line 46, ../scss/screen.scss */
 nav #cache {
   display: none; }
-/* line 26, ../scss/screen.scss */
+/* line 49, ../scss/screen.scss */
 nav #logo {
-  padding: 0.75em 0 0 0.5em; }
-/* line 30, ../scss/screen.scss */
+  padding: 0.75em 0 0 5em; }
+/* line 52, ../scss/screen.scss */
+nav ul.subMenu {
+  position: absolute; }
+/* line 54, ../scss/screen.scss */
 nav ul.subMenu li {
   padding: 0.75em 1.15em;
   width: 16.7em;
   text-align: center;
-  background-color: #c0d8ea; }
-/* line 35, ../scss/screen.scss */
+  background-color: #c0d8ea;
+  border-top: 1px solid #62859d; }
+/* line 60, ../scss/screen.scss */
 nav ul.subMenu li:hover {
   background-color: #62859d; }
-/* line 37, ../scss/screen.scss */
+/* line 62, ../scss/screen.scss */
 nav ul.subMenu li:hover a {
-  color: white; }
-/* line 42, ../scss/screen.scss */
+  color: white;
+  padding: 15px auto; }
+/* line 68, ../scss/screen.scss */
 nav ul.subMenu a {
   text-decoration: none;
   color: #d41c2c; }
+
+/* Connexion/Accueil */
+/* line 77, ../scss/screen.scss */
+.login {
+  width: 20em;
+  margin: 5em auto;
+  padding: 1.5em;
+  background-color: white;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  border-radius: 0.5em; }
+/* line 85, ../scss/screen.scss */
+.login h1 {
+  text-transform: uppercase;
+  font-family: "Bebas";
+  font-size: 1.86em;
+  color: #62859d; }
+/* line 91, ../scss/screen.scss */
+.login .legend {
+  font-size: 14.45px;
+  color: #d41c2c;
+  padding: 0.5em 0 1em 0; }
+/* line 96, ../scss/screen.scss */
+.login h2 {
+  color: #62859d;
+  font-size: 22px; }
+/* line 100, ../scss/screen.scss */
+.login label, .login input {
+  display: block; }
+/* line 103, ../scss/screen.scss */
+.login label {
+  padding-top: 0.75em; }
+/* line 106, ../scss/screen.scss */
+.login input {
+  width: 20em;
+  margin: 0.5em auto;
+  border: 1px solid #dddddd;
+  padding: 1em 0.5em;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  border-radius: 0.5em; }
+
+/* line 115, ../scss/screen.scss */
+.submit {
+  background-color: #d41c2c;
+  color: white;
+  cursor: pointer;
+  padding: 1em 0;
+  position: relative;
+  top: 1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px; }
+/* line 125, ../scss/screen.scss */
+.submit:hover {
+  background-color: #b21c27; }
+
+/* Section principale */
+/* line 132, ../scss/screen.scss */
+section.main {
+  padding: 1.5em 4em;
+  width: 40em;
+  margin: 0 auto;
+  min-height: 20em; }
+
+/* Footer */
+/* line 141, ../scss/screen.scss */
+footer {
+  background-color: #c0d8ea;
+  position: relative; }
+/* line 144, ../scss/screen.scss */
+footer img {
+  float: left; }
+/* line 147, ../scss/screen.scss */
+footer .infosFooter {
+  color: #62859d;
+  padding: 1.5em 0;
+  width: 20em;
+  margin: 0 auto; }
+/* line 153, ../scss/screen.scss */
+footer #logoFooter {
+  padding-right: 1em; }
+/* line 156, ../scss/screen.scss */
+footer .arrow-up {
+  position: absolute;
+  top: 2em;
+  left: 6em;
+  background-color: #d41c2c;
+  padding: 0.7em 0.7em;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  -ms-border-radius: 2em;
+  -o-border-radius: 2em;
+  border-radius: 2em; }
+
+/* line 167, ../scss/screen.scss */
+footer:after {
+  content: "";
+  clear: both;
+  display: block; }

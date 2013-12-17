@@ -2,12 +2,35 @@
 @import "compass/reset";
 @import "colors";
 
+@font-face {
+    font-family: 'bebasregular';
+    src: url('BEBAS___-webfont.eot');
+    src: url('BEBAS___-webfont.eot?#iefix') format('embedded-opentype'),
+         url('BEBAS___-webfont.woff') format('woff'),
+         url('BEBAS___-webfont.ttf') format('truetype'),
+         url('BEBAS___-webfont.svg#bebasregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 html{
 	background-image: url(../img/felt.png);
 }
 
 body{
 	font: 18px/1.5 "Roboto";
+	header {
+		background-color: $bleuClair;
+	}
+	a{
+		text-decoration: none;
+		color:$rougePure;
+		&:hover{
+			color:$rougeFonce;
+			text-decoration: underline;
+		}
+	}
 }
 
 nav{
@@ -17,25 +40,28 @@ nav{
 	#menu:first-child:before {
   		content:url('../img/Data-48.png');
   		position: absolute;
-  		top: 1.25em;
-  		left: 15.5em;
+  		top: 1.5em;
+  		left: 1.25em;
 	}
 	#cache{
 		display: none;
 	}
 	#logo{
-		padding: 0.75em 0 0 0.5em;
+		padding: 0.75em 0 0 5em;
 	}
 	ul.subMenu{
+		position: absolute;
 		li{
 			padding: 0.75em 1.15em;
 			width: 16.7em;
 			text-align: center;
 			background-color: $bleuClair;
+			border-top: 1px solid $bleuFonce;
 			&:hover{
 				background-color: $bleuFonce;
 				a{
 					color:white;
+					padding: 15px auto;
 				}
 			}
 		}
@@ -44,4 +70,102 @@ nav{
 			color: $rougePure;
 		}
 	}
+}
+
+/* Connexion/Accueil */
+
+.login{
+	width: 20em;
+	margin: 5em auto;
+	padding: 1.5em;
+	background-color: white;
+	text-align: center;
+	@include single-box-shadow;
+	@include border-radius(0.5em);
+	h1{
+		text-transform: uppercase;
+		font-family: "Bebas";
+		font-size: 1.86em;
+		color: $bleuFonce;
+	}
+	.legend{
+		font-size: 14.45px;
+		color: $rougePure;
+		padding: 0.5em 0 1em 0;
+	}
+	h2{
+		color: $bleuFonce;
+		font-size: 22px;
+	}
+	label,input{
+		display: block;
+	}
+	label{
+		padding-top: 0.75em;
+	}
+	input{
+		width:20em;
+		margin: 0.5em auto;
+		border: 1px solid $grisContour;
+		padding: 1em 0.5em;
+		@include border-radius(0.5em);
+	}
+}
+
+.submit{
+		background-color: $rougePure;
+		color: white;
+		cursor: pointer;
+		padding: 1em 0;
+		position: relative;
+		top:1em;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 14px;
+		&:hover{
+			background-color: $rougeFonce;
+		}
+}
+
+/* Section principale */
+
+section.main{
+	padding: 1.5em 4em;
+	width: 40em;
+	margin: 0 auto;
+	min-height: 20em;
+}
+
+/* Footer */
+
+footer{
+	background-color: $bleuClair;
+	position: relative;
+	img{
+		float: left;
+	}
+	.infosFooter{
+		color: $bleuFonce;
+		padding: 1.5em 0;
+		width: 20em;
+		margin: 0 auto;
+	}
+	#logoFooter{
+		padding-right: 1em;
+	}
+	.arrow-up{
+		position: absolute;
+		top: 2em;
+		left: 6em;
+		background-color: $rougePure;
+		padding: 0.7em 0.7em;
+		@include border-radius(2em);
+	}
+}
+
+
+footer:after{
+	content:"";
+	clear:both;
+	display: block;
 }
