@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('container')
+<section class="main">
 <?php
 	$tc = User::with('courses')->find(Auth::user()->id);
 	echo '<h2>Mes cours (';
@@ -13,5 +14,5 @@
 		echo '<br>';
 	}
 ?>
-
+</section>
 @stop

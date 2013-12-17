@@ -9,7 +9,7 @@ class StudentController extends BaseController {
 	 */
 	public function index()
 	{
-        return View::make('students.index')->with('title','Mes élèves');
+        return View::make('students.index',compact('students'))->with('title','Mes élèves');
 	}
 
 	/**

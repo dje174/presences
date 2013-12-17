@@ -17,7 +17,7 @@
 						<ul class="subMenu">
 							<li>{{ link_to_route('courses.index','Gérer mes cours') }}</li>
 							<li>{{ link_to_route('students.index','Gérer mes élèves') }}</li>
-							<li>{{ link_to_route('users.show','Mon profil',Auth::user()->slug,Auth::user()->id) }}</li>
+							<li>{{ link_to_route('users.show','Mon profil',Auth::user()->slug) }}</li>
 							<li>{{ link_to_route('logout','Déconnecter') }}</li>
 						</ul>
 					</li>
@@ -31,7 +31,7 @@
     @if (Auth::check())
     <footer>
     	<div class="infosFooter">
-    		<img src="img/PresencesLogoSmall.png" alt="Logo réduit Présences" id="logoFooter">
+    		{{ HTML::image('img/PresencesLogoSmall.png', 'Logo réduit Présences', array('id' => 'logoFooter')) }}
 	    	<p>Développé par <a href="http://www.jerome-poucet.be">Jérôme Poucet</a></p>
 	    	<p>Année scolaire 2013 - 2014</p>
 	    	<p>HEPL Seraing</p>
@@ -41,7 +41,7 @@
     	</div>
     </footer>
    	@endif
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
+   	{{ HTML::script('js/jquery.js') }}
+   	{{ HTML::script('js/script.js') }}
 </body>
 </html>

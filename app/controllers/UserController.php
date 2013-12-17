@@ -40,8 +40,9 @@ class UserController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($slug)
 	{
+		$user = $slug;
         return View::make('users.show')->with('title','Mon profil');
 	}
 
@@ -51,9 +52,10 @@ class UserController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($slug)
 	{
-        return View::make('users.edit')->with('title','Modifier mon profil');
+        $user = $slug;
+        return View::make('users.edit', compact('user'))->with('title','Modifier mon profil');
 	}
 
 	/**
@@ -62,11 +64,15 @@ class UserController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($slug)
 	{
-	$this->user->update($id, Input::all());
-
-	return Redirect::route('users.show', $id);		//
+		$user = $slug;
+		$user->first_name=Input::get('first_name');
+		$user->name=Input::get('name');
+		$user->email=Input::get('email');
+		$user->password=Input::get('password');
+		$user->save();
+		return Redirect::route('users.show', compact('user'))->with('title','Mon profil');
 	}
 
 	/**

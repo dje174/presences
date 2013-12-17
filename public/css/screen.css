@@ -184,18 +184,23 @@ section.main h2 {
   color: #62859d;
   padding-bottom: 0.5em; }
 /* line 142, ../scss/screen.scss */
+section.main h3 {
+  font-size: 20px;
+  color: #48545c;
+  padding: 0.75em 0 0.25em 0; }
+/* line 147, ../scss/screen.scss */
 section.main label {
   display: block;
   color: #4f4f4f;
   padding-top: 0.4em; }
-/* line 146, ../scss/screen.scss */
+/* line 151, ../scss/screen.scss */
 section.main label span {
   color: black; }
-/* line 150, ../scss/screen.scss */
+/* line 155, ../scss/screen.scss */
 section.main .photoProfilUser {
   float: left;
   padding: 0 1em 1em 0; }
-/* line 154, ../scss/screen.scss */
+/* line 159, ../scss/screen.scss */
 section.main .text, section.main select, section.main #inputDescription {
   padding: 0.5em 0.75em;
   font-size: 16px;
@@ -207,10 +212,10 @@ section.main .text, section.main select, section.main #inputDescription {
   border: 1px solid #969595;
   width: 16em;
   margin-bottom: 0.5em; }
-/* line 165, ../scss/screen.scss */
+/* line 170, ../scss/screen.scss */
 section.main #inputDescription {
   width: 30em; }
-/* line 169, ../scss/screen.scss */
+/* line 174, ../scss/screen.scss */
 section.main .validation {
   display: block;
   background-color: #d41c2c;
@@ -225,28 +230,28 @@ section.main .validation {
   -o-border-radius: 0.5em;
   border-radius: 0.5em;
   margin-top: 1em; }
-/* line 179, ../scss/screen.scss */
+/* line 184, ../scss/screen.scss */
 section.main .validation:hover {
   background-color: #b21c27; }
 
 /* Footer */
-/* line 187, ../scss/screen.scss */
+/* line 192, ../scss/screen.scss */
 footer {
   background-color: #c0d8ea;
   position: relative; }
-/* line 190, ../scss/screen.scss */
+/* line 195, ../scss/screen.scss */
 footer img {
   float: left; }
-/* line 193, ../scss/screen.scss */
+/* line 198, ../scss/screen.scss */
 footer .infosFooter {
   color: #62859d;
   padding: 1.5em 0;
   width: 20em;
   margin: 0 auto; }
-/* line 199, ../scss/screen.scss */
+/* line 204, ../scss/screen.scss */
 footer #logoFooter {
   padding-right: 1em; }
-/* line 202, ../scss/screen.scss */
+/* line 207, ../scss/screen.scss */
 footer .arrow-up {
   position: absolute;
   top: 2em;
@@ -259,7 +264,7 @@ footer .arrow-up {
   -o-border-radius: 2em;
   border-radius: 2em; }
 
-/* line 213, ../scss/screen.scss */
+/* line 218, ../scss/screen.scss */
 footer:after, .informationsStudent:after {
   content: "";
   clear: both;
