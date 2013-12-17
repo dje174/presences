@@ -79,9 +79,11 @@ class CourseController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($slug)
 	{
-		//
+		$course = $slug;
+		$course->delete();
+		return Redirect::route('courses.index')->with('title','Mes cours');
 	}
 
 }

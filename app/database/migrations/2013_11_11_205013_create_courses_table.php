@@ -21,8 +21,8 @@ class CreateCoursesTable extends Migration {
 			$table->string('name');
 			$table->text('description');
 			
-			$table->foreign('level_id')->references('id')->on('levels');
-			$table->foreign('year_id')->references('id')->on('years');
+			$table->foreign('level_id')->references('id')->on('levels')->onDelete('cascade');
+			$table->foreign('year_id')->references('id')->on('years')->onDelete('cascade');
 			
 			$table->timestamps();
 		});
