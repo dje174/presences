@@ -3,10 +3,12 @@
 @section('container')
 	<section class="main">
 		<h2>Profil de {{ $student->first_name.' '.$student->name }} </h2>
-		{{ link_to_route('students.edit','Modifier le profil', $student->slug) }}
-		{{ Form::open(array('method' => 'DELETE', 'route' => array('students.destroy' , $student->slug))) }}
-			{{ Form::submit('Supprimer') }}
-		{{ Form::close() }}
+		<div class="change">
+			{{ link_to_route('students.edit','Modifier le profil', $student->slug,array('class'=>'modify')) }}
+			{{ Form::open(array('method' => 'DELETE', 'route' => array('students.destroy' , $student->slug))) }}
+				{{ Form::submit('Supprimer',array('class'=>'delete')) }}
+			{{ Form::close() }}
+		</div>
 		<div class="informationsStudent">
 			{{ HTML::image('img/UserPhoto.png', 'Photo de profil de l\'élève',array('class' => 'photoProfilUser')) }}
 			<label for="prenom">Prénom: <span>{{ $student->first_name }}</span></label>

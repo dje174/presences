@@ -3,7 +3,9 @@
 @section('container')
 <section class="main">
 	<h2>Mon profil ({{ Auth::user()->first_name, Auth::user()->name}})</h2>
-	{{ link_to_route('users.edit','Modifier le profil', Auth::user()->slug) }}
+	<div class="change">
+	{{ link_to_route('users.edit','Modifier le profil', Auth::user()->slug,array('class'=>'modify')) }}
+	</div>
 	<label>Prénom: <span>{{ Auth::user()->first_name }}</span></label>
 	<label>Nom: <span>{{ Auth::user()->name }}</span></label>
 	<label>Email: <span>{{ Auth::user()->email }}</span></label>

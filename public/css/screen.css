@@ -248,29 +248,31 @@ section.main .modify:hover {
 section.main .delete {
   background-color: #b21c27;
   position: relative;
-  top: -1.25em; }
-/* line 206, ../scss/screen.scss */
+  top: -1.10em;
+  font-size: 14px;
+  padding: 0.5em 0.75em; }
+/* line 208, ../scss/screen.scss */
 section.main .delete:hover {
   background-color: #d41c2c; }
 
 /* Footer */
-/* line 214, ../scss/screen.scss */
+/* line 216, ../scss/screen.scss */
 footer {
   background-color: #c0d8ea;
   position: relative; }
-/* line 217, ../scss/screen.scss */
+/* line 219, ../scss/screen.scss */
 footer img {
   float: left; }
-/* line 220, ../scss/screen.scss */
+/* line 222, ../scss/screen.scss */
 footer .infosFooter {
   color: #62859d;
   padding: 1.5em 0;
   width: 20em;
   margin: 0 auto; }
-/* line 226, ../scss/screen.scss */
+/* line 228, ../scss/screen.scss */
 footer #logoFooter {
   padding-right: 1em; }
-/* line 229, ../scss/screen.scss */
+/* line 231, ../scss/screen.scss */
 footer .arrow-up {
   position: absolute;
   top: 2em;
@@ -283,7 +285,7 @@ footer .arrow-up {
   -o-border-radius: 2em;
   border-radius: 2em; }
 
-/* line 240, ../scss/screen.scss */
+/* line 242, ../scss/screen.scss */
 footer:after, .informationsStudent:after, .change:after {
   content: "";
   clear: both;
