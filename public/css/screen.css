@@ -177,7 +177,8 @@ section.main {
   padding: 1em 4em;
   width: 40em;
   margin: 0 auto;
-  min-height: 20em; }
+  min-height: 20em;
+  /* VUES SHOW */ }
 /* line 137, ../scss/screen.scss */
 section.main h2 {
   font-size: 22px;
@@ -188,19 +189,19 @@ section.main h3 {
   font-size: 20px;
   color: #48545c;
   padding: 0.75em 0 0.25em 0; }
-/* line 147, ../scss/screen.scss */
+/* line 150, ../scss/screen.scss */
 section.main label {
   display: block;
   color: #4f4f4f;
   padding-top: 0.4em; }
-/* line 151, ../scss/screen.scss */
+/* line 154, ../scss/screen.scss */
 section.main label span {
   color: black; }
-/* line 155, ../scss/screen.scss */
+/* line 158, ../scss/screen.scss */
 section.main .photoProfilUser {
   float: left;
   padding: 0 1em 1em 0; }
-/* line 159, ../scss/screen.scss */
+/* line 162, ../scss/screen.scss */
 section.main .text, section.main select, section.main #inputDescription {
   padding: 0.5em 0.75em;
   font-size: 16px;
@@ -212,11 +213,11 @@ section.main .text, section.main select, section.main #inputDescription {
   border: 1px solid #969595;
   width: 16em;
   margin-bottom: 0.5em; }
-/* line 170, ../scss/screen.scss */
+/* line 173, ../scss/screen.scss */
 section.main #inputDescription {
   width: 30em; }
-/* line 174, ../scss/screen.scss */
-section.main .validation {
+/* line 177, ../scss/screen.scss */
+section.main .validation, section.main .delete {
   display: block;
   background-color: #d41c2c;
   color: white;
@@ -230,28 +231,46 @@ section.main .validation {
   -o-border-radius: 0.5em;
   border-radius: 0.5em;
   margin-top: 1em; }
-/* line 184, ../scss/screen.scss */
-section.main .validation:hover {
+/* line 187, ../scss/screen.scss */
+section.main .validation:hover, section.main .delete:hover {
   background-color: #b21c27; }
+/* line 191, ../scss/screen.scss */
+section.main .modify, section.main .delete {
+  float: left;
+  margin-right: 1em; }
+/* line 195, ../scss/screen.scss */
+section.main .modify {
+  color: #1f8fdb; }
+/* line 197, ../scss/screen.scss */
+section.main .modify:hover {
+  color: #62859d; }
+/* line 201, ../scss/screen.scss */
+section.main .delete {
+  background-color: #b21c27;
+  position: relative;
+  top: -1.25em; }
+/* line 206, ../scss/screen.scss */
+section.main .delete:hover {
+  background-color: #d41c2c; }
 
 /* Footer */
-/* line 192, ../scss/screen.scss */
+/* line 214, ../scss/screen.scss */
 footer {
   background-color: #c0d8ea;
   position: relative; }
-/* line 195, ../scss/screen.scss */
+/* line 217, ../scss/screen.scss */
 footer img {
   float: left; }
-/* line 198, ../scss/screen.scss */
+/* line 220, ../scss/screen.scss */
 footer .infosFooter {
   color: #62859d;
   padding: 1.5em 0;
   width: 20em;
   margin: 0 auto; }
-/* line 204, ../scss/screen.scss */
+/* line 226, ../scss/screen.scss */
 footer #logoFooter {
   padding-right: 1em; }
-/* line 207, ../scss/screen.scss */
+/* line 229, ../scss/screen.scss */
 footer .arrow-up {
   position: absolute;
   top: 2em;
@@ -264,8 +283,8 @@ footer .arrow-up {
   -o-border-radius: 2em;
   border-radius: 2em; }
 
-/* line 218, ../scss/screen.scss */
-footer:after, .informationsStudent:after {
+/* line 240, ../scss/screen.scss */
+footer:after, .informationsStudent:after, .change:after {
   content: "";
   clear: both;
   display: block; }

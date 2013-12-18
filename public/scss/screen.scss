@@ -144,6 +144,9 @@ section.main{
 		color: $bleuGris;
 		padding: 0.75em 0 0.25em 0;
 	}
+
+/* VUES SHOW */
+
 	label{
 		display: block;
 		color: $grisFonce;
@@ -185,6 +188,25 @@ section.main{
 			background-color: $rougeFonce;
 		}
 	}
+	.modify,.delete{
+		float: left;
+		margin-right: 1em;
+	}
+	.modify{
+		color: $bleuFlash;
+		&:hover{
+			color:$bleuFonce;
+		} 	
+	}
+	.delete{
+		@extend .validation;
+		background-color: $rougeFonce;
+		position: relative;
+		top: -1.25em;
+		&:hover{
+			background-color: $rougePure;
+		}	
+	}
 }
 
 /* Footer */
@@ -215,7 +237,7 @@ footer{
 }
 
 
-footer:after,.informationsStudent:after{
+footer:after,.informationsStudent:after,.change:after{
 	content:"";
 	clear:both;
 	display: block;
