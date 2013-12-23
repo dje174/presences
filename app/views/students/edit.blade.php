@@ -10,11 +10,11 @@
 			{{ Form::label('email','Email :') }}
 			{{ Form::text('email', $student->email, array('class'=>'text'))}}
 			{{ Form::label('level','Degré :') }}
-			{{ Form::select('level', array(
-				'1' => 'première année infographie',
-				'2' => 'deuxième année infographie',
-				'3' => 'troisème année infographie'
-			))}}
+			<select name="level" id="level">
+				@foreach($levels as $level)
+                    <option <?php if($student->level->id === $level->id){ echo('selected'); } ?> value="{{ $level->id }}">{{{ $level->name }}}</option>
+            	@endforeach
+			</select>
 			{{ Form::submit('Valider la modification', array('class'=>'validation')) }}
 		{{ Form::close() }}
 	</section>

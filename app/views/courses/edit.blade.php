@@ -8,20 +8,17 @@
 		{{ Form::label('description','Description du cours :') }}
 		{{ Form::text('description', $course->description, array('id'=>'inputDescription')) }}
 		{{ Form::label('level','Degré :') }}
-			{{ Form::select('level', array(
-				'1' => 'première année infographie',
-				'2' => 'deuxième année infographie',
-				'3' => 'troisème année infographie'
-			))}}
+		<select name="level" id="level">
+				@foreach($levels as $level)
+                    <option <?php if($course->level->id === $level->id){ echo('selected'); } ?> value="{{ $level->id }}">{{{ $level->name }}}</option>
+            	@endforeach
+		</select>
 		{{ Form::label('year','Année académique :') }}
-			{{ Form::select('year', array(
-				'1' => '2009-2010',
-				'2' => '2010-2011',
-				'3' => '2011-2012',
-				'4' => '2012-2013',
-				'5' => '2013-2014',
-				'6' => '2014-2015'
-			))}}
+		<select name="level" id="level">
+				@foreach($years as $year)
+                    <option <?php if($course->year->id === $year->id){ echo('selected'); } ?> value="{{ $year->id }}">{{{ $year->name }}}</option>
+            	@endforeach
+		</select>
 		{{ Form::submit('Valider la modification', array('class'=>'validation')) }}
 		{{ Form::close() }}
 	</section>

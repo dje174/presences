@@ -53,7 +53,10 @@ class CourseController extends BaseController {
 	public function edit($slug)
 	{
 		$course = $slug;
-        return View::make('courses.edit', compact('course'))->with('title','Modifier le cours');
+		$courses = Course::all();
+		$levels = Level::all();
+		$years = Year::all();
+        return View::make('courses.edit', compact('course','courses','levels','years'))->with('title','Modifier le cours');
 	}
 
 	/**

@@ -12,7 +12,9 @@ class CourseSession extends Eloquent {
     
     public function students()
     {
-        return $this->belongsToMany('Student')->with('attendance_id','comment')->withTimestamps();
+        return $this->belongsToMany('Student', 'session_student', 'session_id', 'student_id')
+                    ->withPivot('attendance_id','comment')
+                    ->withTimestamps();
     }
 
     public function course()

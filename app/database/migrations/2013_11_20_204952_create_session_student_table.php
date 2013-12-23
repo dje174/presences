@@ -17,9 +17,9 @@ class CreateSessionStudentTable extends Migration {
 			$table->integer('session_id')->unsigned();
 			$table->integer('student_id')->unsigned();
 			
-			$table->foreign('session_id')->references('id')->on('sessions')->onDelete('cascade');
-			$table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
-			$table->foreign('attendance_id')->references('id')->on('attendances')->onDelete('cascade');
+			$table->foreign('session_id')->references('id')->on('sessions');
+			$table->foreign('student_id')->references('id')->on('students');
+			$table->foreign('attendance_id')->references('id')->on('attendances');
 			
 			$table->string('comment')->nullable();
 

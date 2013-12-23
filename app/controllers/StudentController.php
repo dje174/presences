@@ -55,7 +55,9 @@ class StudentController extends BaseController {
 	public function edit($slug)
 	{
 		$student = $slug;
-        return View::make('students.edit', compact('student'))->with('title','Modifier le profil');
+		$courses = Course::all();
+		$levels = Level::all();
+        return View::make('students.edit', compact('student', 'courses', 'levels'))->with('title','Modifier le profil');
 	}
 
 	/**
