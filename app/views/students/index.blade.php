@@ -9,6 +9,13 @@
 	echo ' ';
 	echo Auth::user()->name;
 	echo ') : </h2>';
+?>
+@if (Auth::check())
+    <a href="{{ route('students.create') }}" title="Ajouter un élève" class="create">
+    	{{ Form::submit('Ajouter un élève', array('class'=>'creation')) }}
+    </a>
+@endif
+<?php
 	foreach ($tc->courses as $course) {
 		echo '<h3>'.$course->name.'</h3>';
 		foreach ($course->students as $student){

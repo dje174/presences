@@ -2,6 +2,12 @@
 
 class CourseController extends BaseController {
 
+	protected $course;
+
+	public function __construct(Course $course){
+	    $this->course = $course;
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -19,7 +25,7 @@ class CourseController extends BaseController {
 	 */
 	public function create()
 	{
-        return View::make('courses.create');
+        return View::make('courses.create')->with('title','Créer un cours');
 	}
 
 	/**
@@ -29,7 +35,16 @@ class CourseController extends BaseController {
 	 */
 	public function store()
 	{
-		//
+		$inputs = Input::all();
+
+		if( ! $this->course->fill($inputs)->isValid())
+		{
+			return Redirect::back()->withInput()->withErrors($this->course->errors);
+		}
+
+		$this->course->save();
+
+		return Redirect::route('courses.index');
 	}
 
 	/**
@@ -68,11 +83,13 @@ class CourseController extends BaseController {
 	public function update($slug)
 	{
 		$course = $slug;
-		$course->name=Input::get('name');
-		$course->description=Input::get('description');
-		$course->level_id=Input::get('level');
-		$course->year_id=Input::get('year');
-		$course->save();
+		$inputs = Input::all();
+		if( ! $this->course->fill($inputs)->isValid())
+		{
+			return Redirect::back()->withInput()->withErrors($this->course->errors);
+		}
+
+		$this->course->save();
 		return Redirect::route('courses.index', compact('course'))->with('title','Mes cours');
 	}
 

@@ -41,3 +41,5 @@ Route::resource('students', 'StudentController');
 // Route::get('/',function(){
 // 	return User::find(1);
 // });
+
+Route::resource('sessions', 'SessionsController');

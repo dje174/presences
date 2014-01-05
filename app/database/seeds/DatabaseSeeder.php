@@ -18,10 +18,10 @@ class DatabaseSeeder extends Seeder {
 		$this->call('CoursesTableSeeder');
 		$this->call('CourseTeacherTableSeeder');
 		$this->call('CourseStudentTableSeeder');
-		// $this->call('SessionsTableSeeder');
 		$this->call('SessionStudentTableSeeder');
 		//Ajout des slugs, oubliés dans la première version
 		$this->call('SlugSeeder');
+		$this->call('SessionsTableSeeder');
 	}
 
 }

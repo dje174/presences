@@ -137,7 +137,6 @@ section.main{
 	h2{
 		font-size: 22px;
 		color: $bleuFonce;
-		padding-bottom: 0.5em;
 	}
 	h3{
 		font-size: 20px;
@@ -188,6 +187,22 @@ section.main{
 			background-color: $rougeFonce;
 		}
 	}
+	.error{
+		color: $rougeFonce;
+		padding-left: 1em;
+	}
+	.creation{
+		@extend .validation;
+		background-color: $vertPure;
+		margin-bottom: 1em;
+		&:hover{
+			background-color: $vertFonce;
+			text-decoration: none;
+		}
+	}
+	.create{
+		text-decoration: none;
+	}
 	.modify,.delete{
 		float: left;
 		margin-right: 1em;
@@ -208,6 +223,9 @@ section.main{
 		&:hover{
 			background-color: $rougePure;
 		}	
+	}
+	.change{
+		margin-top: 0.5em;
 	}
 }
 

@@ -5,13 +5,34 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
+    protected $fillable = [ 'first_name', 'name', 'email', 'password' ];
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'teachers';
+    public static $rules = [
+        'first_name' => 'required',
+        'name' => 'required',
+        'email' => 'required|email',
+        'password' => 'required'
+    ];
+
+    public $errors;
+
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'teachers';
+
+
+    public function isValid()
+    {
+        $validation = Validator::make($this->attributes, static::$rules);
+
+        if($validation->passes()) return true;
+
+        $this->errors = $validation->messages();
+        return false;
+    }
 
     public function courses()
     {

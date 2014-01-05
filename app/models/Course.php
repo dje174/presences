@@ -2,12 +2,34 @@
 
 class Course extends Eloquent {
 
+    protected $fillable = [ 'name', 'description', 'level', 'year' ];
+
+    public static $rules = [
+        'name' => 'required',
+        'description' => 'required',
+        'level' => 'required',
+        'year' => 'required'
+    ];
+
+    public $errors;
+
     /**
      * The database table used by the model.
      *
      * @var string
      */
     protected $table = 'courses';
+
+
+    public function isValid()
+    {
+        $validation = Validator::make($this->attributes, static::$rules);
+
+        if($validation->passes()) return true;
+
+        $this->errors = $validation->messages();
+        return false;
+    }
 
     /**
      * Method helping to retrieve the Year of a Course

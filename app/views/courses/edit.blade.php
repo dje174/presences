@@ -5,8 +5,10 @@
 		{{ Form::open(array('method' => 'PATCH', 'route' => array('courses.update' , $course->slug))) }}
 		{{ Form::label('name','Nom du cours :') }}
 		{{ Form::text('name', $course->name, array('class'=>'text')) }}
+		{{ $errors->first('name','<span class=error>:message</span>'); }}
 		{{ Form::label('description','Description du cours :') }}
 		{{ Form::text('description', $course->description, array('id'=>'inputDescription')) }}
+		{{ $errors->first('description','<span class=error>:message</span>'); }}
 		{{ Form::label('level','Degré :') }}
 		<select name="level" id="level">
 				@foreach($levels as $level)

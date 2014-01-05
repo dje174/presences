@@ -5,10 +5,13 @@
 		{{ Form::open(array('method' => 'PATCH', 'route' => array('students.update' , $student->slug))) }}
 			{{ Form::label('first_name','Prénom :') }}
 			{{ Form::text('first_name', $student->first_name, array('class'=>'text'))}}
+			{{ $errors->first('first_name','<span class=error>:message</span>'); }}
 			{{ Form::label('name','Nom :') }}
 			{{ Form::text('name', $student->name, array('class'=>'text'))}}
+			{{ $errors->first('name','<span class=error>:message</span>'); }}
 			{{ Form::label('email','Email :') }}
 			{{ Form::text('email', $student->email, array('class'=>'text'))}}
+			{{ $errors->first('email','<span class=error>:message</span>'); }}
 			{{ Form::label('level','Degré :') }}
 			<select name="level" id="level">
 				@foreach($levels as $level)

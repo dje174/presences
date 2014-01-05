@@ -11,7 +11,7 @@
 	<label>Email: <span>{{ Auth::user()->email }}</span></label>
 	<?php
 		$tc = User::with('courses')->find(Auth::user()->id);
-		echo '<label>Mes cours :';
+		echo '<label>Mes cours:';
 		echo '<br>';
 		foreach ($tc->courses as $course) {
 			echo ' '.link_to_route('courses.show',$course->name,$course->slug);
@@ -19,5 +19,7 @@
 		}
 		echo '</label>';
 	?>
+	<label>Mes élèves:</label>
+	{{ link_to_route('students.index','Voir mes élèves') }}
 </section>
 @stop

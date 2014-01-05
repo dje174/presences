@@ -3,6 +3,10 @@
 class UserController extends BaseController {
 
 	protected $user;
+
+	public function __construct(User $user){
+	    $this->user = $user;
+	}
 	
 	/**
 	 * Display a listing of the resource.
@@ -67,11 +71,13 @@ class UserController extends BaseController {
 	public function update($slug)
 	{
 		$user = $slug;
-		$user->first_name=Input::get('first_name');
-		$user->name=Input::get('name');
-		$user->email=Input::get('email');
-		$user->password=Input::get('password');
-		$user->save();
+		$inputs = Input::all();
+		if( ! $this->user->fill($inputs)->isValid())
+		{
+			return Redirect::back()->withInput()->withErrors($this->user->errors);
+		}
+
+		$this->user->save();
 		return Redirect::route('users.show', compact('user'))->with('title','Mon profil');
 	}
 

@@ -2,6 +2,13 @@
 
 class StudentController extends BaseController {
 
+	protected $student;
+
+	public function __construct(Student $student){
+	    $this->student = $student;
+	}
+
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -19,7 +26,7 @@ class StudentController extends BaseController {
 	 */
 	public function create()
 	{
-        return View::make('students.create');
+        return View::make('students.create')->with('title','Ajouter un élève');
 	}
 
 	/**
@@ -29,7 +36,16 @@ class StudentController extends BaseController {
 	 */
 	public function store()
 	{
-		//
+		$inputs = Input::all();
+
+		if( ! $this->student->fill($inputs)->isValid())
+		{
+			return Redirect::back()->withInput()->withErrors($this->student->errors);
+		}
+
+		$this->student->save();
+
+		return Redirect::route('students.index');
 	}
 
 	/**
@@ -69,11 +85,13 @@ class StudentController extends BaseController {
 	public function update($slug)
 	{
 		$student = $slug;
-		$student->first_name=Input::get('first_name');
-		$student->name=Input::get('name');
-		$student->email=Input::get('email');
-		$student->level_id=Input::get('level');
-		$student->save();
+		$inputs = Input::all();
+		if( ! $this->student->fill($inputs)->isValid())
+		{
+			return Redirect::back()->withInput()->withErrors($this->student->errors);
+		}
+
+		$this->student->save();
 		return Redirect::route('students.index', compact('student'))->with('title','Mes élèves');
 	}
 
