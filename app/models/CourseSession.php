@@ -9,6 +9,10 @@ class CourseSession extends Eloquent {
      */
     protected $table = 'sessions';
 
+    public function getDates()
+    {
+        return array_merge(parent::getDates(), array('date_start', 'date_end'));
+    }
     
     public function students()
     {

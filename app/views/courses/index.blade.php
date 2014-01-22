@@ -15,11 +15,25 @@
     	{{ Form::submit('Créer un cours', array('class'=>'creation')) }}
     </a>
 @endif
-<?php
-	foreach ($tc->courses as $course) {
-		echo link_to_route('courses.show',$course->name,$course->slug);
-		echo '<br>';
-	}
-?>
+<table>
+@foreach ($tc->courses as $course)
+	<thead>
+		<td>
+			@foreach($years as $year)
+			{{'<h3>'.$year->name.'</h3>';}}
+			@endforeach
+		</td>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				{{link_to_route('courses.show',$course->name,$course->slug);}}
+			</td>
+		</tr>
+		
+	</tbody>
+	
+@endforeach
+</table>
 </section>
 @stop

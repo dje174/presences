@@ -2,13 +2,13 @@
 
 class Course extends Eloquent {
 
-    protected $fillable = [ 'name', 'description', 'level', 'year' ];
+    protected $fillable = [ 'name', 'description', 'level_id', 'year_id' ];
 
     public static $rules = [
         'name' => 'required',
         'description' => 'required',
-        'level' => 'required',
-        'year' => 'required'
+        'level_id' => 'required',
+        'year_id' => 'required'
     ];
 
     public $errors;

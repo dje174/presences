@@ -10,13 +10,13 @@
 		{{ Form::text('description', $course->description, array('id'=>'inputDescription')) }}
 		{{ $errors->first('description','<span class=error>:message</span>'); }}
 		{{ Form::label('level','Degré :') }}
-		<select name="level" id="level">
+		<select name="level_id" id="level_id">
 				@foreach($levels as $level)
                     <option <?php if($course->level->id === $level->id){ echo('selected'); } ?> value="{{ $level->id }}">{{{ $level->name }}}</option>
             	@endforeach
 		</select>
 		{{ Form::label('year','Année académique :') }}
-		<select name="level" id="level">
+		<select name="year_id" id="year_id">
 				@foreach($years as $year)
                     <option <?php if($course->year->id === $year->id){ echo('selected'); } ?> value="{{ $year->id }}">{{{ $year->name }}}</option>
             	@endforeach

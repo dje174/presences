@@ -14,11 +14,17 @@
 	                    {{ Form::text('description','', array('placeholder' => 'Description du cours','class'=>'text',))}}
 	                    	{{ $errors->first('description','<span class=error>:message</span>'); }}
 	                   	{{ Form::label('level','Degré :') }}
-	                    {{ Form::text('level','', array('placeholder' => 'Cours donné en','class'=>'text')) }}
-	                    	{{ $errors->first('level','<span class=error>:message</span>'); }}
-	                    {{ Form::label('year','Année académique :') }}
-	                    {{ Form::text('year','',array('placeholder' => 'Année académique','class'=>'text')) }}
-	                    	{{ $errors->first('year','<span class=error>:message</span>'); }}
+	                    <select name="level_id" id="level_id">
+								@foreach($levels as $level)
+				                    <option value="{{ $level->id }}">{{{ $level->name }}}</option>
+				            	@endforeach
+						</select>
+						{{ Form::label('year_id','Année académique :') }}
+						<select name="year_id" id="year_id">
+								@foreach($years as $year)
+				                    <option value="{{ $year->id }}">{{{ $year->name }}}</option>
+				            	@endforeach
+						</select>
 	                    {{ Form::submit('Valider la création', array('class'=>'creation')) }}
 	                {{ Form::close() }}
 	            </div>

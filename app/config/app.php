@@ -114,7 +114,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
-		'Gloudemans\Calendar\CalendarServiceProvider'
+		'Gloudemans\Calendar\CalendarServiceProvider',
+		'Intervention\Image\ImageServiceProvider'
 
 	),
 
@@ -181,6 +182,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Calendar'        => 'Gloudemans\Calendar\Facades\Calendar',
+		'Image'			  => 'Intervention\Image\Facades\Image'
 
 	),
 

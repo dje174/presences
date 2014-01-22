@@ -26,7 +26,9 @@ class StudentController extends BaseController {
 	 */
 	public function create()
 	{
-        return View::make('students.create')->with('title','Ajouter un élève');
+		$courses = Course::all();
+		$levels = Level::all();
+        return View::make('students.create', compact('student', 'courses', 'levels'))->with('title','Ajouter un élève');
 	}
 
 	/**
@@ -41,6 +43,16 @@ class StudentController extends BaseController {
 		if( ! $this->student->fill($inputs)->isValid())
 		{
 			return Redirect::back()->withInput()->withErrors($this->student->errors);
+		}
+
+		if(Input::hasFile('photo'))
+		{
+			$file = Input::file('photo');
+			$name = $this->student->name. '-'.time() . '.' . $file->getClientOriginalExtension();
+
+			$file = $file->move(public_path().'/photoProfilStudents/',$name);
+
+			$this->student->photo = $name;
 		}
 
 		$this->student->save();
@@ -85,13 +97,20 @@ class StudentController extends BaseController {
 	public function update($slug)
 	{
 		$student = $slug;
-		$inputs = Input::all();
-		if( ! $this->student->fill($inputs)->isValid())
+		$student->first_name=Input::get('first_name');
+		$student->name=Input::get('name');
+		$student->email=Input::get('email');
+		if(Input::hasFile('photo'))
 		{
-			return Redirect::back()->withInput()->withErrors($this->student->errors);
-		}
+			$file = Input::file('photo');
+			$name = Input::get('nameStudent'). '-'.time() . '.' . $file->getClientOriginalExtension();
 
-		$this->student->save();
+			$file = $file->move(public_path().'/photoProfilStudents/',$name);
+
+			$this->student->photo = $name;
+		}
+		$student->level_id=Input::get('level');
+		$student->save();
 		return Redirect::route('students.index', compact('student'))->with('title','Mes élèves');
 	}
 

@@ -15,7 +15,9 @@ class CourseController extends BaseController {
 	 */
 	public function index()
 	{
-        return View::make('courses.index')->with('title','Mes cours');
+		$levels = Level::all();
+		$years = Year::all();
+        return View::make('courses.index', compact('levels','years'))->with('title','Mes cours');
 	}
 
 	/**
@@ -25,7 +27,10 @@ class CourseController extends BaseController {
 	 */
 	public function create()
 	{
-        return View::make('courses.create')->with('title','Créer un cours');
+		$courses = Course::all();
+		$levels = Level::all();
+		$years = Year::all();
+        return View::make('courses.create', compact('course','courses','levels','years'))->with('title','Créer un cours');
 	}
 
 	/**
@@ -83,13 +88,11 @@ class CourseController extends BaseController {
 	public function update($slug)
 	{
 		$course = $slug;
-		$inputs = Input::all();
-		if( ! $this->course->fill($inputs)->isValid())
-		{
-			return Redirect::back()->withInput()->withErrors($this->course->errors);
-		}
-
-		$this->course->save();
+		$course->name=Input::get('name');
+		$course->description=Input::get('description');
+		$course->level_id=Input::get('level_id');
+		$course->year_id=Input::get('year_id');
+		$course->save();
 		return Redirect::route('courses.index', compact('course'))->with('title','Mes cours');
 	}
 

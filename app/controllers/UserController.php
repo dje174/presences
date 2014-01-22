@@ -68,15 +68,13 @@ class UserController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($slug)
+	public function update($id)
 	{
-		$user = $slug;
-		$inputs = Input::all();
-		if( ! $this->user->fill($inputs)->isValid())
-		{
-			return Redirect::back()->withInput()->withErrors($this->user->errors);
-		}
-
+		$user = $this->user->find($id);
+		$user->name=Input::get('name');
+		$user->first_name=Input::get('first_name');
+		$user->email=Input::get('email');
+		$user->password=Hash::make(Input::get('password'));
 		$this->user->save();
 		return Redirect::route('users.show', compact('user'))->with('title','Mon profil');
 	}
@@ -103,7 +101,7 @@ class UserController extends BaseController {
 	    );
 
 	    if(Auth::attempt($user)){
-	        return Redirect::route('home.index');
+	        return Redirect::route('sessions.index');
 	    }
 	    else{
 	        return Redirect::route('login');

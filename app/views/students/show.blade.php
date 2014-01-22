@@ -10,7 +10,7 @@
 			{{ Form::close() }}
 		</div>
 		<div class="informationsStudent">
-			{{ HTML::image('img/UserPhoto.png', 'Photo de profil de l\'élève',array('class' => 'photoProfilUser')) }}
+			<img src="/photoProfilStudents/{{$student->photo}}" alt="Photo de profil de l'élève" class="photoProfilUser">
 			<label for="prenom">Prénom: <span>{{ $student->first_name }}</span></label>
 			<label for="nom">Nom: <span>{{ $student->name }}</span></label>
 			<label for="email">Email: <span>{{ $student->email }}</span></label>

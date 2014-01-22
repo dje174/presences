@@ -3,12 +3,12 @@
 @section('container')
 <section class="main">
 	<h2>Modifier mon profil ({{ Auth::user()->first_name, Auth::user()->name}})</h2>
-	{{ Form::open( array('method' => 'PATCH', 'route' => array('users.update', Auth::user()->slug))) }}
+	{{ Form::open( array('method' => 'PATCH', 'route' => array('users.update', $user->id))) }}
+		{{ Form::label('Votre nom','Votre nom') }}
+		{{ Form::text('name', Auth::user()->name, array('class'=>'text')); }}
 		{{ Form::label('Votre prénom','Votre prénom') }}
 		{{ Form::text('first_name', Auth::user()->first_name, array('class'=>'text')); }}
 		{{ $errors->first('first_name','<span class=error>:message</span>'); }}
-		{{ Form::label('Votre nom','Votre nom') }}
-		{{ Form::text('name', Auth::user()->name, array('class'=>'text')); }}
 		{{ $errors->first('name','<span class=error>:message</span>'); }}
 		{{ Form::label('Votre email','Votre email') }}
 		{{ Form::text('email', Auth::user()->email, array('class'=>'text')); }}

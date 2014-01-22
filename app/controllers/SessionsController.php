@@ -1,6 +1,14 @@
 <?php
 
+use Carbon\Carbon as Carbon;
+
 class SessionsController extends BaseController {
+
+	protected $session;
+
+	public function __construct(CourseSession $session){
+		$this->session = $session;
+	}
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +17,18 @@ class SessionsController extends BaseController {
 	 */
 	public function index()
 	{
-        return View::make('sessions.index');
+		$sessions = $this->session->get();
+		$config = array(
+		    'lang' => '',
+		    'start_day' => 'monday',
+		    'month_type' => 'long',
+		    'show_next_prev' => true,
+		    'local_time' => time()
+		);
+
+		Calendar::initialize($config);
+
+        return View::make('sessions.index', compact('sessions'))->with('title','Bienvenue '.Auth::user()->first_name);
 	}
 
 	/**
@@ -40,7 +59,9 @@ class SessionsController extends BaseController {
 	 */
 	public function show($id)
 	{
-        return View::make('sessions.show');
+        $session = $this->session->with('course')->findOrFail($id);
+
+		$attendances = Attendance::all();
 	}
 
 	/**

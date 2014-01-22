@@ -18,7 +18,7 @@
 <?php
 	foreach ($tc->courses as $course) {
 		echo '<h3>'.$course->name.'</h3>';
-		foreach ($course->students as $student){
+		foreach ($course->getCollection()->students as $student){
 			echo link_to_route('students.show',$student->first_name.' '.$student->name.' ('.$student->level->name.')',$student->slug);
 			echo '<br>';
 		}

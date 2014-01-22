@@ -1,13 +1,14 @@
 <?php
 
 class Student extends Eloquent {
-    protected $fillable = [ 'first_name', 'name', 'email', 'level' ];
+    protected $fillable = [ 'first_name', 'name', 'email', 'photo', 'level_id' ];
 
     public static $rules = [
         'first_name' => 'required',
         'name' => 'required',
         'email' => 'required|email',
-        'level' => 'required'
+        'photo' => 'image',
+        'level_id' => 'required'
     ];
 
     public $errors;

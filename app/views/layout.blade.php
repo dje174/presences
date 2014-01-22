@@ -11,7 +11,7 @@
 		@if (Auth::check())
 			<nav>
 				<ul class="navigation">
-					<li id="logo"><a href="/home" title="Accueil">{{ HTML::image('img/PresencesLogo.png') }}</a></li>
+					<li id="logo"><a href="/sessions" title="Accueil">{{ HTML::image('img/PresencesLogo.png') }}</a></li>
 					<li class="toggleSubMenu">
 						<span>Menu</span>
 						<ul class="subMenu">
