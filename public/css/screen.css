@@ -55,65 +55,59 @@ html {
 
 /* line 21, ../scss/screen.scss */
 body {
-  font: 18px/1.5 "Roboto"; }
+  background-image: url(../img/felt.png); }
 /* line 23, ../scss/screen.scss */
 body header {
-  background-color: #c0d8ea; }
-/* line 26, ../scss/screen.scss */
-body a {
-  text-decoration: none;
-  color: #d41c2c; }
-/* line 29, ../scss/screen.scss */
-body a:hover {
-  color: #b21c27;
-  text-decoration: underline; }
+  background-color: #c0d8ea;
+  padding-bottom: 0.5em; }
 
-/* line 36, ../scss/screen.scss */
+/* line 29, ../scss/screen.scss */
 nav {
   position: relative;
   width: 19em;
   background-color: #c0d8ea; }
-/* line 40, ../scss/screen.scss */
+/* line 33, ../scss/screen.scss */
 nav #menu:first-child:before {
   content: url("../img/Data-48.png");
   position: absolute;
   top: 1.5em;
   left: 1.25em; }
-/* line 46, ../scss/screen.scss */
+/* line 39, ../scss/screen.scss */
 nav #cache {
   display: none; }
-/* line 49, ../scss/screen.scss */
+/* line 42, ../scss/screen.scss */
 nav #logo {
   padding: 0.75em 0 0 5em; }
-/* line 52, ../scss/screen.scss */
+/* line 45, ../scss/screen.scss */
 nav ul.subMenu {
-  position: absolute; }
-/* line 54, ../scss/screen.scss */
+  position: absolute;
+  z-index: 1;
+  top: 7.7em; }
+/* line 49, ../scss/screen.scss */
 nav ul.subMenu li {
   padding: 0.75em 1.15em;
   width: 16.7em;
   text-align: center;
   background-color: #c0d8ea;
   border-top: 1px solid #62859d; }
-/* line 60, ../scss/screen.scss */
+/* line 55, ../scss/screen.scss */
 nav ul.subMenu li:hover {
   background-color: #62859d; }
-/* line 62, ../scss/screen.scss */
+/* line 57, ../scss/screen.scss */
 nav ul.subMenu li:hover a {
   color: white;
   padding: 15px auto; }
-/* line 68, ../scss/screen.scss */
+/* line 63, ../scss/screen.scss */
 nav ul.subMenu a {
   text-decoration: none;
   color: #d41c2c; }
 
 /* Connexion/Accueil */
-/* line 77, ../scss/screen.scss */
+/* line 72, ../scss/screen.scss */
 .login {
-  width: 20em;
+  width: 30em;
   margin: 5em auto;
   padding: 1.5em;
-  background-color: white;
   text-align: center;
   -webkit-box-shadow: 0px 0px 5px #333333;
   -moz-box-shadow: 0px 0px 5px #333333;
@@ -122,177 +116,99 @@ nav ul.subMenu a {
   -moz-border-radius: 0.5em;
   -ms-border-radius: 0.5em;
   -o-border-radius: 0.5em;
-  border-radius: 0.5em; }
-/* line 85, ../scss/screen.scss */
+  border-radius: 0.5em;
+  background-color: white; }
+/* line 80, ../scss/screen.scss */
 .login h1 {
   text-transform: uppercase;
   font-family: "Bebas";
   font-size: 1.86em;
   color: #62859d; }
-/* line 91, ../scss/screen.scss */
+/* line 86, ../scss/screen.scss */
 .login .legend {
   font-size: 14.45px;
   color: #d41c2c;
   padding: 0.5em 0 1em 0; }
-/* line 96, ../scss/screen.scss */
+/* line 91, ../scss/screen.scss */
 .login h2 {
   color: #62859d;
   font-size: 22px; }
-/* line 100, ../scss/screen.scss */
-.login label, .login input {
-  display: block; }
-/* line 103, ../scss/screen.scss */
-.login label {
-  padding-top: 0.75em; }
-/* line 106, ../scss/screen.scss */
-.login input {
-  width: 20em;
-  margin: 0.5em auto;
-  border: 1px solid #dddddd;
-  padding: 1em 0.5em;
-  -webkit-border-radius: 0.5em;
-  -moz-border-radius: 0.5em;
-  -ms-border-radius: 0.5em;
-  -o-border-radius: 0.5em;
-  border-radius: 0.5em; }
 
-/* line 115, ../scss/screen.scss */
-.submit {
-  background-color: #d41c2c;
-  color: white;
-  cursor: pointer;
-  padding: 1em 0;
-  position: relative;
-  top: 1em;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 14px; }
-/* line 125, ../scss/screen.scss */
-.submit:hover {
-  background-color: #b21c27; }
-
-/* Section principale */
-/* line 132, ../scss/screen.scss */
+/* Sections principales */
+/* line 99, ../scss/screen.scss */
 section.main {
-  padding: 1em 4em;
-  width: 40em;
-  margin: 0 auto;
-  min-height: 40em;
-  /* VUES SHOW */ }
-/* line 137, ../scss/screen.scss */
-section.main h2 {
-  font-size: 22px;
-  color: #62859d; }
-/* line 141, ../scss/screen.scss */
-section.main h3 {
-  font-size: 20px;
-  color: #48545c;
-  padding: 0.75em 0 0.25em 0; }
-/* line 149, ../scss/screen.scss */
-section.main label {
-  display: block;
-  color: #4f4f4f;
-  padding-top: 0.4em; }
-/* line 153, ../scss/screen.scss */
-section.main label span {
-  color: black; }
-/* line 157, ../scss/screen.scss */
-section.main .photoProfilUser {
-  float: left;
-  padding: 0 1em 1em 0; }
-/* line 161, ../scss/screen.scss */
-section.main .text, section.main select, section.main #inputDescription {
-  padding: 0.5em 0.75em;
-  font-size: 16px;
-  -webkit-border-radius: 0.5em;
-  -moz-border-radius: 0.5em;
-  -ms-border-radius: 0.5em;
-  -o-border-radius: 0.5em;
-  border-radius: 0.5em;
-  border: 1px solid #969595;
-  width: 16em;
-  margin-bottom: 0.5em; }
-/* line 172, ../scss/screen.scss */
-section.main #inputDescription {
-  width: 30em; }
-/* line 176, ../scss/screen.scss */
-section.main .validation, section.main .creation, section.main .delete {
-  display: block;
-  background-color: #d41c2c;
-  color: white;
-  padding: 1em 1.5em;
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-  -webkit-border-radius: 0.5em;
-  -moz-border-radius: 0.5em;
-  -ms-border-radius: 0.5em;
-  -o-border-radius: 0.5em;
-  border-radius: 0.5em;
-  margin-top: 1em; }
-/* line 186, ../scss/screen.scss */
-section.main .validation:hover, section.main .creation:hover, section.main .delete:hover {
-  background-color: #b21c27; }
-/* line 190, ../scss/screen.scss */
-section.main .error {
-  color: #b21c27;
-  padding-left: 1em; }
-/* line 194, ../scss/screen.scss */
-section.main .creation {
-  background-color: #6bbf27;
-  margin-bottom: 1em; }
-/* line 198, ../scss/screen.scss */
-section.main .creation:hover {
-  background-color: #1cb223;
-  text-decoration: none; }
-/* line 203, ../scss/screen.scss */
-section.main .create {
-  text-decoration: none; }
-/* line 206, ../scss/screen.scss */
-section.main .modify, section.main .delete {
-  float: left;
-  margin-right: 1em; }
-/* line 210, ../scss/screen.scss */
-section.main .modify {
-  color: #1f8fdb; }
-/* line 212, ../scss/screen.scss */
-section.main .modify:hover {
-  color: #62859d; }
-/* line 216, ../scss/screen.scss */
-section.main .delete {
-  background-color: #b21c27;
+  min-height: 50em;
+  background-color: #fff;
+  opacity: 0.9;
+  padding-bottom: 3em;
   position: relative;
-  top: -1.10em;
-  font-size: 14px;
-  padding: 0.5em 0.75em; }
-/* line 223, ../scss/screen.scss */
-section.main .delete:hover {
-  background-color: #d41c2c; }
-/* line 227, ../scss/screen.scss */
-section.main .change {
-  margin-top: 0.5em; }
+  top: -0em; }
+/* line 106, ../scss/screen.scss */
+section.main .students {
+  height: 25em;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin-top: 2em; }
+/* line 113, ../scss/screen.scss */
+section.main .informationsStudent .content-informations {
+  margin-left: 1.5em;
+  float: left; }
+/* line 116, ../scss/screen.scss */
+section.main .informationsStudent .content-informations .content {
+  font-size: 17px;
+  margin-bottom: 0.75em; }
+/* line 122, ../scss/screen.scss */
+section.main .leftBtn {
+  float: left;
+  margin: 0.5em 1.5em 1em 0; }
+/* line 126, ../scss/screen.scss */
+section.main .btn {
+  margin-bottom: 1em; }
+/* line 129, ../scss/screen.scss */
+section.main .table-sessions, section.main .calendar {
+  float: left; }
+/* line 132, ../scss/screen.scss */
+section.main .table-sessions {
+  width: 70%;
+  height: 25em;
+  overflow: hidden;
+  overflow-y: scroll; }
+/* line 139, ../scss/screen.scss */
+section.main .calendar table {
+  margin: 0em 0 0 1.5em;
+  font-size: 18px;
+  text-align: center; }
+/* line 144, ../scss/screen.scss */
+section.main .calendar table th, section.main .calendar table td {
+  padding: 0.5em; }
+/* line 147, ../scss/screen.scss */
+section.main .calendar table td strong {
+  color: #d41c2c; }
+/* line 152, ../scss/screen.scss */
+section.main table th {
+  font-weight: bold; }
 
 /* Footer */
-/* line 234, ../scss/screen.scss */
+/* line 160, ../scss/screen.scss */
 footer {
   background-color: #c0d8ea;
   position: relative; }
-/* line 237, ../scss/screen.scss */
+/* line 163, ../scss/screen.scss */
 footer img {
   float: left; }
-/* line 240, ../scss/screen.scss */
+/* line 166, ../scss/screen.scss */
 footer .infosFooter {
   color: #62859d;
   padding: 1.5em 0;
   width: 20em;
   margin: 0 auto; }
-/* line 246, ../scss/screen.scss */
+/* line 172, ../scss/screen.scss */
 footer #logoFooter {
   padding-right: 1em; }
-/* line 249, ../scss/screen.scss */
+/* line 175, ../scss/screen.scss */
 footer .arrow-up {
   position: absolute;
-  top: 2em;
+  top: 1em;
   left: 6em;
   background-color: #d41c2c;
   padding: 0.7em 0.7em;
@@ -302,8 +218,8 @@ footer .arrow-up {
   -o-border-radius: 2em;
   border-radius: 2em; }
 
-/* line 260, ../scss/screen.scss */
-footer:after, .informationsStudent:after, .change:after {
+/* line 186, ../scss/screen.scss */
+footer:after, .informationsStudent:after, .change:after, .changes:after, .table-sessions:after, .calendar:after {
   content: "";
   clear: both;
   display: block; }

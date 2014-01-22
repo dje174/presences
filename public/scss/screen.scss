@@ -19,17 +19,10 @@ html{
 }
 
 body{
-	font: 18px/1.5 "Roboto";
+	background-image: url(../img/felt.png);
 	header {
 		background-color: $bleuClair;
-	}
-	a{
-		text-decoration: none;
-		color:$rougePure;
-		&:hover{
-			color:$rougeFonce;
-			text-decoration: underline;
-		}
+		padding-bottom: 0.5em;
 	}
 }
 
@@ -51,6 +44,8 @@ nav{
 	}
 	ul.subMenu{
 		position: absolute;
+		z-index: 1;
+		top: 7.7em;
 		li{
 			padding: 0.75em 1.15em;
 			width: 16.7em;
@@ -75,13 +70,13 @@ nav{
 /* Connexion/Accueil */
 
 .login{
-	width: 20em;
+	width: 30em;
 	margin: 5em auto;
 	padding: 1.5em;
-	background-color: white;
 	text-align: center;
 	@include single-box-shadow;
 	@include border-radius(0.5em);
+	background-color: white;
 	h1{
 		text-transform: uppercase;
 		font-family: "Bebas";
@@ -97,135 +92,66 @@ nav{
 		color: $bleuFonce;
 		font-size: 22px;
 	}
-	label,input{
-		display: block;
-	}
-	label{
-		padding-top: 0.75em;
-	}
-	input{
-		width:20em;
-		margin: 0.5em auto;
-		border: 1px solid $grisContour;
-		padding: 1em 0.5em;
-		@include border-radius(0.5em);
-	}
 }
 
-.submit{
-		background-color: $rougePure;
-		color: white;
-		cursor: pointer;
-		padding: 1em 0;
-		position: relative;
-		top:1em;
-		text-transform: uppercase;
-		font-weight: bold;
-		font-size: 14px;
-		&:hover{
-			background-color: $rougeFonce;
-		}
-}
-
-/* Section principale */
+/* Sections principales */
 
 section.main{
-	padding: 1em 4em;
-	width: 40em;
-	margin: 0 auto;
-	min-height: 40em;
-	h2{
-		font-size: 22px;
-		color: $bleuFonce;
+	min-height: 50em;
+	background-color: #fff;
+	opacity: 0.9;
+	padding-bottom: 3em;
+	position: relative;
+	top: -0em;
+	.students{
+		height: 25em;
+		overflow: hidden;
+		overflow-y: scroll;
+		margin-top: 2em;
 	}
-	h3{
-		font-size: 20px;
-		color: $bleuGris;
-		padding: 0.75em 0 0.25em 0;
-	}
-
-/* VUES SHOW */
-
-	label{
-		display: block;
-		color: $grisFonce;
-		padding-top: 0.4em;
-		span{
-			color: black;
+	.informationsStudent{
+		.content-informations{
+			margin-left: 1.5em;
+			float: left;
+			.content{
+				font-size: 17px;
+				margin-bottom: 0.75em;
+			}
 		}
 	}
-	.photoProfilUser{
+	.leftBtn{
 		float: left;
-		padding: 0 1em 1em 0;
+		margin:0.5em 1.5em 1em 0;
 	}
-	.text{
-		padding: 0.5em 0.75em;
-		font-size: 16px;
-		@include border-radius(0.5em);
-		border: 1px solid $grisMoyen;
-		width: 16em;
-		margin-bottom: 0.5em;
-	}
-	select{
-		@extend .text;
-	}
-	#inputDescription{
-		@extend .text;
-		width: 30em;
-	}
-	.validation{
-		display: block;
-		background-color: $rougePure;
-		color: white;
-		padding: 1em 1.5em;
-		text-transform: uppercase;
-		border: none;
-		cursor: pointer;
-		@include border-radius(0.5em);
-		margin-top: 1em;
-		&:hover{
-			background-color: $rougeFonce;
-		}
-	}
-	.error{
-		color: $rougeFonce;
-		padding-left: 1em;
-	}
-	.creation{
-		@extend .validation;
-		background-color: $vertPure;
+	.btn{
 		margin-bottom: 1em;
-		&:hover{
-			background-color: $vertFonce;
-			text-decoration: none;
+	}
+	.table-sessions, .calendar{
+		float: left;
+	}
+	.table-sessions{
+		width: 70%;
+		height: 25em;
+		overflow: hidden;
+		overflow-y: scroll;
+
+	}
+	.calendar table{
+		//width: 15em;
+		margin: 0em 0 0 1.5em;
+		font-size: 18px;
+		text-align: center;
+		th, td{
+			padding: 0.5em;
+		}
+		td strong{
+			color: $rougePure;
 		}
 	}
-	.create{
-		text-decoration: none;
-	}
-	.modify,.delete{
-		float: left;
-		margin-right: 1em;
-	}
-	.modify{
-		color: $bleuFlash;
-		&:hover{
-			color:$bleuFonce;
-		} 	
-	}
-	.delete{
-		@extend .validation;
-		background-color: $rougeFonce;
-		position: relative;
-		top: -1.10em;
-		font-size: 14px;
-		padding: 0.5em 0.75em;
-		&:hover{
-			background-color: $rougePure;
-		}	
-	}
-	.change{
-		margin-top: 0.5em;
+	table{
+		th{
+			font-weight: bold;
+		}
 	}
 }
 
@@ -248,7 +174,7 @@ footer{
 	}
 	.arrow-up{
 		position: absolute;
-		top: 2em;
+		top: 1em;
 		left: 6em;
 		background-color: $rougePure;
 		padding: 0.7em 0.7em;
@@ -257,7 +183,7 @@ footer{
 }
 
 
-footer:after,.informationsStudent:after,.change:after{
+footer:after,.informationsStudent:after,.change:after, .changes:after, .table-sessions:after, .calendar:after{
 	content:"";
 	clear:both;
 	display: block;

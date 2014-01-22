@@ -19,10 +19,10 @@ class SessionsController extends BaseController {
 	{
 		$sessions = $this->session->get();
 		$config = array(
-		    'lang' => '',
+		    'lang' => 'fr',
 		    'start_day' => 'monday',
 		    'month_type' => 'long',
-		    'show_next_prev' => true,
+		    'show_next_prev' => false,
 		    'local_time' => time()
 		);
 
