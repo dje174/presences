@@ -1,0 +1,18 @@
+@media only screen and (min-width:300px) and (max-width: 500px) {
+	.arrow-up{
+		top: -2.5em;
+		left: 10em;
+	}
+	.table-sessions{
+		width: 100%;
+	}
+}
+@media only screen and (min-width:500px){
+	.arrow-up{
+		top: 1.5em;
+		left: 6em;
+	}
+	.table-sessions{
+		width: 70%;
+	}
+}

@@ -169,47 +169,44 @@ section.main .table-sessions, section.main .calendar {
   float: left; }
 /* line 132, ../scss/screen.scss */
 section.main .table-sessions {
-  width: 70%;
   height: 25em;
   overflow: hidden;
   overflow-y: scroll; }
-/* line 139, ../scss/screen.scss */
+/* line 138, ../scss/screen.scss */
 section.main .calendar table {
   margin: 0em 0 0 1.5em;
   font-size: 18px;
   text-align: center; }
-/* line 144, ../scss/screen.scss */
+/* line 142, ../scss/screen.scss */
 section.main .calendar table th, section.main .calendar table td {
   padding: 0.5em; }
-/* line 147, ../scss/screen.scss */
+/* line 145, ../scss/screen.scss */
 section.main .calendar table td strong {
   color: #d41c2c; }
-/* line 152, ../scss/screen.scss */
+/* line 150, ../scss/screen.scss */
 section.main table th {
   font-weight: bold; }
 
 /* Footer */
-/* line 160, ../scss/screen.scss */
+/* line 158, ../scss/screen.scss */
 footer {
   background-color: #c0d8ea;
   position: relative; }
-/* line 163, ../scss/screen.scss */
+/* line 161, ../scss/screen.scss */
 footer img {
   float: left; }
-/* line 166, ../scss/screen.scss */
+/* line 164, ../scss/screen.scss */
 footer .infosFooter {
   color: #62859d;
-  padding: 1.5em 0;
+  padding: 2em 0;
   width: 20em;
   margin: 0 auto; }
-/* line 172, ../scss/screen.scss */
+/* line 170, ../scss/screen.scss */
 footer #logoFooter {
   padding-right: 1em; }
-/* line 175, ../scss/screen.scss */
+/* line 173, ../scss/screen.scss */
 footer .arrow-up {
   position: absolute;
-  top: 1em;
-  left: 6em;
   background-color: #d41c2c;
   padding: 0.7em 0.7em;
   -webkit-border-radius: 2em;
@@ -218,8 +215,27 @@ footer .arrow-up {
   -o-border-radius: 2em;
   border-radius: 2em; }
 
-/* line 186, ../scss/screen.scss */
+/* line 182, ../scss/screen.scss */
 footer:after, .informationsStudent:after, .change:after, .changes:after, .table-sessions:after, .calendar:after {
   content: "";
   clear: both;
   display: block; }
+
+@media only screen and (min-width: 300px) and (max-width: 500px) {
+  /* line 2, ../scss/mediaqueries.scss */
+  .arrow-up {
+    top: -2.5em;
+    left: 10em; }
+
+  /* line 6, ../scss/mediaqueries.scss */
+  .table-sessions {
+    width: 100%; } }
+@media only screen and (min-width: 500px) {
+  /* line 11, ../scss/mediaqueries.scss */
+  .arrow-up {
+    top: 1.5em;
+    left: 6em; }
+
+  /* line 15, ../scss/mediaqueries.scss */
+  .table-sessions {
+    width: 70%; } }

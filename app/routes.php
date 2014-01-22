@@ -29,17 +29,8 @@ Route::resource('users', 'UserController');
 Route::get('/', array('as' => 'login','uses' => 'UserController@login'))->before('guest');
 Route::post('login', array('as' => 'connect', 'uses' => 'UserController@connect'))->before('guest');
 Route::get('logout', array('as' => 'logout', 'uses' => 'UserController@logout'))->before('auth');
-
+Route::get('/', array('as' => 'index','uses' => 'SessionsController@index'))->before('auth');
 Route::resource('courses', 'CourseController');
 Route::resource('students', 'StudentController');
-
-// Route::get('/students/{students}',function($students){
-// 	return $students;
-// 	//return Student::where('slug','=',$slug)->first();
-// });
-
-// Route::get('/',function(){
-// 	return User::find(1);
-// });
 
 Route::resource('sessions', 'SessionsController');

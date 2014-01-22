@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>{{ $title }} - Présences</title>
     {{ HTML::style('css/screen.css'); }}
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 </head>
@@ -13,7 +15,7 @@
     		@if (Auth::check())
     			<nav>
     				<ul class="navigation">
-    					<li id="logo"><a href="/sessions" title="Accueil">{{ HTML::image('img/PresencesLogo.png') }}</a></li>
+    					<li id="logo"><a href="{{route('sessions.index')}}">{{ HTML::image('img/PresencesLogo.png') }}</a></li>
     					<li class="toggleSubMenu">
     						<span>Menu</span>
     						<ul class="subMenu">
